@@ -14,7 +14,7 @@ URL_REGEX = r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"
 
 class MirrorStatus:
     STATUS_UPLOADING = "<b>📤Uploading To TD...📬</b>"
-    STATUS_DOWNLOADING = "<b>📥DownloadinG to My Server..📬</b>"
+    STATUS_DOWNLOADING = "<b>📥Downloading to My Server..📬</b>"
     STATUS_WAITING = "<b>Queued 📝</b>"
     STATUS_FAILED = "Failed 🚫. Cleaning download"
     STATUS_CANCELLED = "<b>Cancelled ❎</b>"
@@ -143,7 +143,6 @@ def is_magnet(url: str):
         return True
     return False
 
-
 def is_mega_link(url: str):
     return "mega.nz" in url
 
@@ -155,6 +154,7 @@ def get_mega_link_type(url: str):
     elif "/#F!" in url:
         return "folder"
     return "file"
+
 
 def new_thread(fn):
     """To use as decorator to make a function call threaded.
